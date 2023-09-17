@@ -30,10 +30,9 @@
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "prepack": "bob build",
+    "pack": "bob build && npm run copy",
     "release": "release-it",
-    "example": "yarn --cwd example",
-    "bootstrap": "yarn example && yarn install"
+    "copy": "xcopy \".\\lib\" \".\\playground\\lib\" /s/y/i"
   },
   "keywords": [
     "react-native",
@@ -77,7 +76,10 @@
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-gesture-handler": "^2.12.1",
+    "react-native-reanimated": "^3.5.2",
+    "react-native-svg": "^13.13.0"
   },
   "engines": {
     "node": ">= 16.0.0"
