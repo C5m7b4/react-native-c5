@@ -1,7 +1,9 @@
-import { BasicChart, LineChart } from './charts';
+import { BarChart, BasicChart, LineChart } from './charts';
 import { BasicChartProps, BasicChartState, TextAnchor } from './types';
 import {
   AxisConfig,
+  BarChartProps,
+  IBarChartTooltipConfig,
   ILinearGradient,
   ILineTooltipConfig,
   IStop,
@@ -13,9 +15,12 @@ export const multiply = (a: number, b: number) => a * b;
 
 export {
   AxisConfig,
+  BarChart,
+  BarChartProps,
   BasicChart,
   BasicChartProps,
   BasicChartState,
+  IBarChartTooltipConfig,
   ILinearGradient,
   ILineTooltipConfig,
   IStop,

@@ -5,6 +5,7 @@ import {NavigationContainer} from '@react-navigation/native';
 import {multiply} from './lib/commonjs';
 
 import Charts from './src/pages/Charts';
+import BarCharts from './src/pages/BarCharts';
 
 const Page1 = () => {
   const [mulResult, setMulResult] = useState(0);
@@ -41,6 +42,7 @@ const App = () => {
         <Drawer.Screen name="Home" component={Page1} />
         <Drawer.Screen name="Page2" component={Page2} />
         <Drawer.Screen name="Charts" component={Charts} />
+        <Drawer.Screen name="BarCharts" component={BarCharts} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
