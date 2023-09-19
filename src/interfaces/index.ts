@@ -48,3 +48,24 @@ export interface LineChartProps {
   curve?: boolean;
   useLineShadow?: boolean;
 }
+
+export interface BarChartProps {
+  barColor?: string;
+  barWidth?: number;
+  barOpacity?: number;
+  useBarGradient?: boolean;
+  bar_gradient_config?: ILinearGradient;
+  animated?: boolean;
+  threeD?: boolean;
+  threeDX?: number;
+  threeDY?: number;
+  showTooltips?: boolean;
+  tooltip_config?: IBarChartTooltipConfig;
+}
+
+export interface IBarChartTooltipConfig {
+  fontSize?: number;
+  fontWeight?: string;
+  textAnchor?: TextAnchor;
+  fontColor?: string;
+}

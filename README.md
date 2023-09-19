@@ -9,10 +9,12 @@ npm install react-native-c5
 ```
 
 ## Basic Chart
+
 ![basic](images/01-basic-chart.png)
 ![basic](images/02-Basic-Chart_lines.png)
 
 ## Line Chart
+
 ![line](images/03-line-chart-basic.png)
 ![line](images/04-line-chart-curve.png)
 ![line](images/05-line-chart-gradient.png)
@@ -20,6 +22,8 @@ npm install react-native-c5
 ![line](images/07-line-chart-rotation.png)
 
 ### Usage
+
+The usage for all the charts is basically the same.
 
 ```js
 import {LineChart} from '.react-native-c5';
@@ -186,6 +190,98 @@ const {
         tooltipWidth: 40,
         tooltipFill: '#fff',
         tooltipBorderRadius: 7,
+        fontSize: 12,
+        fontWeight: '400',
+        textAnchor: 'middle',
+      },
+    } = this.props;
+```
+
+## Bar Chart
+
+![barchart](images/08-bar-chart-basic.png)
+![barchart](images/09-bar-chart-gradient.png)
+![barchart](images/010-bar-chart-threeD.png)
+
+sample config for BarChart
+
+```js
+const {
+      onPressItem,
+      height: containerHeight = 300,
+      width: containerWidth = SCREEN_WIDTH - 50,
+      backgroundColor = 'transparent',
+      svgBackgroundColor = 'transparent',
+      backgroundBorderRadius = 20,
+      axisCircleRadius = 5,
+      axisColor = '#000',
+      axisCircleFillColor = '#000',
+      axisCircleStrokeColor = 'purple',
+      axisStrokeWidth = 1,
+      axisCircleOpacity = 0.8,
+      showHorizontalLines = true,
+      horizontalLineOpacity = 0.1,
+      showVerticalLines = true,
+      verticalLineOpacity = 0.1,
+      useBarGradient = true,
+      threeD = true,
+      threeDX = 5,
+      threeDY = 5,
+      x_label_renderer,
+      y_label_renderer,
+      barColor = 'purple',
+      barOpacity = 1,
+      barWidth = 20,
+      animated = true,
+      gradient_background_config = {
+        x1: 0,
+        y1: 0,
+        x2: 0,
+        y2: containerHeight,
+        stop1: {
+          offset: 0,
+          stopColor: '#6491d9',
+          stopOpacity: 0.3,
+        },
+        stop2: {
+          offset: 1,
+          stopColor: '#3557bf',
+          stopOpacity: 0.8,
+        },
+      },
+      bar_gradient_config = {
+        x1: 0,
+        y1: 0,
+        x2: 0,
+        y2: containerHeight,
+        stop1: {
+          offset: 0,
+          stopColor: '#7e248a',
+          stopOpacity: 0.8,
+        },
+        stop2: {
+          offset: 1,
+          stopColor: '#b92bcc',
+          stopOpacity: 0.3,
+        },
+      },
+      x_axis_config = {
+        fontSize: 12,
+        textAnchor: 'middle',
+        fontColor: '#000',
+        fontWeight: '400',
+        rotation: 0,
+      },
+      y_axis_config = {
+        fontSize: 12,
+        textAnchor: 'end',
+        fontColor: '#000',
+        fontWeight: '400',
+        rotation: 0,
+      },
+      showTooltips = true,
+      tooltip_config = {
+        fontColor: '#000',
         fontSize: 12,
         fontWeight: '400',
         textAnchor: 'middle',
