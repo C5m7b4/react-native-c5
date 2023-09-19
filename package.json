@@ -9,28 +9,14 @@
   "source": "src/index",
   "files": [
     "src",
-    "lib",
-    "android",
-    "ios",
-    "cpp",
-    "*.podspec",
-    "!lib/typescript/example",
-    "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
-    "!**/__tests__",
-    "!**/__fixtures__",
-    "!**/__mocks__",
-    "!**/.*"
+    "lib"
   ],
   "scripts": {
     "test": "jest",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "pack": "bob build && npm run copy",
+    "build": "bob build",
     "release": "release-it",
     "copy": "xcopy \".\\lib\" \".\\playground\\lib\" /s/y/i"
   },
@@ -55,7 +41,7 @@
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
-    "@types/react": "~17.0.21",
+    "@types/react": "~18.2.0", 
     "@types/react-native": "0.70.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.0.0",
@@ -88,8 +74,9 @@
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
+      "<rootDir>/playground/node_modules",
+      "<rootDir>/lib/",
+      "<rootDir>/playground"
     ]
   },
   "commitlint": {
@@ -130,7 +117,8 @@
           "trailingComma": "es5",
           "useTabs": false
         }
-      ]
+      ],
+      "no-bitwise": 0
     }
   },
   "eslintIgnore": [
@@ -142,7 +130,8 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "es5",
-    "useTabs": false
+    "useTabs": false,
+    "endOfLine": "auto"
   },
   "react-native-builder-bob": {
     "source": "src",
