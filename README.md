@@ -1,6 +1,6 @@
 # react-native-c5
 
-a  small library to host charts
+a  small library to host charts adn a few other helper functions
 
 ## Installation
 
