@@ -16,8 +16,8 @@ import { quickSort } from '../../utils';
 
 const { width: SCREEN_WIDTH } = Dimensions.get('window');
 
-class BasicChart<T> extends React.Component<
-  BasicChartProps<T>,
+class BasicChart<T, K> extends React.Component<
+  BasicChartProps<T, K>,
   BasicChartState<T>
 > {
   state: BasicChartState<T> = {
@@ -289,6 +289,7 @@ class BasicChart<T> extends React.Component<
         gap_between_ticks * index;
       const dataPoints = this.state.data.length - 1;
       const textValue = min + (yMax / dataPoints) * index;
+
       return (
         <G key={`y_axis_label_${index}`}>
           <SvgText

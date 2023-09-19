@@ -1,7 +1,7 @@
 export type TextAnchor = 'start' | 'middle' | 'end';
 import { ILinearGradient, AxisConfig } from '../interfaces';
 
-export type BasicChartProps<T> = {
+export type BasicChartProps<T, K> = K & {
   backgroundBorderRadius?: number;
   backgroundColor?: string;
   axisCircleFillColor?: string;

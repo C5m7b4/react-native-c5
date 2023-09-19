@@ -25,3 +25,26 @@ export interface ILinearGradient {
   stop3?: IStop;
   stop4?: IStop;
 }
+
+export interface ILineTooltipConfig {
+  tooltipHeight: number;
+  tooltipWidth: number;
+  tooltipFill: string;
+  tooltipBorderRadius: number;
+  fontSize: number;
+  fontWeight: string;
+  textAnchor: TextAnchor;
+}
+
+export interface LineChartProps {
+  lineCircleRadius?: number;
+  lineCircleStroke?: string;
+  lineCircleFill?: string;
+  lineCircleStrokeWidth?: number;
+  showTooltips?: boolean;
+  tooltip_config?: ILineTooltipConfig;
+  lineStrokeWidth?: number;
+  lineStroke?: string;
+  curve?: boolean;
+  useLineShadow?: boolean;
+}
