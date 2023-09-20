@@ -1,31 +1,76 @@
-import { BarChart, BasicChart, LineChart } from './charts';
-import { BasicChartProps, BasicChartState, TextAnchor } from './types';
+import { BarChart, BoxPlot, BasicChart, LineChart } from './charts';
+import {
+  BasicChartProps,
+  BasicChartState,
+  TextAnchor,
+  IGradientUnits,
+} from './types';
 import {
   AxisConfig,
   BarChartProps,
+  BoxPlotProps,
   IBarChartTooltipConfig,
   ILinearGradient,
   ILineTooltipConfig,
+  IOutlier,
   IStop,
   LineChartProps,
+  BoxPlotPress,
 } from './interfaces';
 import { quickSort, newShade } from './utils';
+
+import {
+  asc,
+  desc,
+  sum,
+  max,
+  min,
+  range,
+  mean,
+  median,
+  quartile,
+  IQR,
+  Outliers,
+  maxWithoutOutliers,
+  minWithoutOutliers,
+  unique,
+} from './helpers';
 
 export const multiply = (a: number, b: number) => a * b;
 
 export {
+  asc,
   AxisConfig,
   BarChart,
   BarChartProps,
   BasicChart,
   BasicChartProps,
   BasicChartState,
+  BoxPlot,
+  BoxPlotPress,
+  BoxPlotProps,
+  desc,
+  IGradientUnits,
   IBarChartTooltipConfig,
   ILinearGradient,
   ILineTooltipConfig,
+  IOutlier,
   IStop,
+  IQR,
   LineChart,
   LineChartProps,
+  max,
+  maxWithoutOutliers,
+  mean,
+  median,
+  min,
+  minWithoutOutliers,
+  newShade,
+  sum,
+  Outliers,
+  range,
   TextAnchor,
+  quartile,
+  quickSort,
+  unique,
 };
-export { quickSort, newShade };
