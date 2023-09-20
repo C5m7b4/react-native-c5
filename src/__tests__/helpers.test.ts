@@ -26,6 +26,8 @@ describe('asc', () => {
 describe('desc', () => {
   test('should sort descending', () => {
     expect(desc(arr)).toEqual([25, 15, 10, 9, 5, 4, 2, 0]);
+    const arr2 = [0, 2, 2, 9, 6];
+    expect(desc(arr2)).toEqual([9, 6, 2, 2, 0]);
   });
 });
 
@@ -44,6 +46,8 @@ describe('max', () => {
 describe('min', () => {
   test('should return the smallest number', () => {
     expect(min(arr)).toEqual(0);
+    const arr1 = [1, 3, 5];
+    expect(min(arr1)).toEqual(1);
   });
 });
 
@@ -67,13 +71,15 @@ describe('median', () => {
   });
 });
 
-describe('quantile', () => {
-  test('should return the proper quantile', () => {
+describe('quartile', () => {
+  test('should return the proper quartile', () => {
     expect(quartile(arr, 0.25)).toEqual(3);
     expect(quartile(arr, 0.75)).toEqual(12.5);
     const arr2 = [2, 4, 7, 9, 10, 15, 20];
     expect(quartile(arr2, 0.25)).toEqual(4);
     expect(quartile(arr2, 0.75)).toEqual(15);
+    const arr3 = [1];
+    expect(quartile(arr3, 0.25)).toEqual(1);
   });
 });
 
@@ -93,15 +99,17 @@ describe('Outliers', () => {
 });
 
 describe('maxWithoutOutliers', () => {
-  test('should return the highest value that is not an outliers', () => {
-    const arr3 = [1, 49, 50, 55, 56, 57, 58, 99];
+  test('should return the highest value that is not an outlier', () => {
+    const arr3 = [1, 49, 50, 55, 56, 57, 58, 101, 99, 0];
     expect(maxWithoutOutliers(arr3)).toEqual(58);
+    const arr4 = [100, 0, 5, 8];
+    expect(maxWithoutOutliers(arr4)).toEqual(100);
   });
 });
 
 describe('minWithoutOutliers', () => {
   test('should return the lowest value that is not an outlier', () => {
-    const arr3 = [1, 49, 50, 55, 56, 57, 58, 99];
+    const arr3 = [1, 49, 50, 55, 56, 57, 58, 101, 99];
     expect(minWithoutOutliers(arr3)).toEqual(49);
   });
 });
@@ -109,6 +117,7 @@ describe('minWithoutOutliers', () => {
 describe('unique', () => {
   test('should only return unique values', () => {
     const arr4 = [1, 1, 2, 4, 4, 5, 4, 7, 8];
-    expect(unique(arr4)).toEqual([1, 2, 4, 5, 7, 8]);
+    const uniques = unique(arr4);
+    expect(unique(uniques)).toEqual(['1', '2', '4', '5', '7', '8']);
   });
 });

@@ -28,13 +28,13 @@ export interface ILinearGradient {
 }
 
 export interface ILineTooltipConfig {
-  tooltipHeight: number;
-  tooltipWidth: number;
-  tooltipFill: string;
-  tooltipBorderRadius: number;
-  fontSize: number;
-  fontWeight: string;
-  textAnchor: TextAnchor;
+  tooltipHeight?: number;
+  tooltipWidth?: number;
+  tooltipFill?: string;
+  tooltipBorderRadius?: number;
+  fontSize?: number;
+  fontWeight?: string;
+  textAnchor?: TextAnchor;
 }
 
 export interface LineChartProps {
@@ -106,8 +106,8 @@ export interface BoxPlotProps<T> {
   lowerLineStrokeWidth?: number;
   lowerboxStroke?: string;
   lowerboxStrokeWidth?: number;
-  onPress: (record: BoxPlotPress<T>) => void;
-  predicateResult: (item: T) => T[] | [];
+  onPress?: (record: BoxPlotPress<T>) => void;
+  predicateResult?: (item: T) => T[] | [];
   outlier_config?: IOutlier;
 }
 

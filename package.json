@@ -13,6 +13,9 @@
   ],
   "scripts": {
     "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "view:coverage": "start coverage/lcov-report/index.html",
     "typecheck": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "pack": "bob build && npm run copy",
@@ -41,7 +44,7 @@
     "@react-native-community/eslint-config": "^3.0.2",
     "@release-it/conventional-changelog": "^5.0.0",
     "@types/jest": "^28.1.2",
-    "@types/react": "~18.2.0", 
+    "@types/react": "~18.2.0",
     "@types/react-native": "0.70.0",
     "commitlint": "^17.0.2",
     "del-cli": "^5.0.0",
@@ -54,6 +57,7 @@
     "react": "18.2.0",
     "react-native": "0.72.4",
     "react-native-builder-bob": "^0.20.0",
+    "react-test-renderer": "^18.2.0",
     "release-it": "^15.0.0",
     "typescript": "^5.0.2"
   },
@@ -73,6 +77,17 @@
   "packageManager": "^yarn@1.22.15",
   "jest": {
     "preset": "react-native",
+    "clearMocks": true,
+    "coverageDirectory": "./coverage",
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
+      }
+    },
     "modulePathIgnorePatterns": [
       "<rootDir>/playground/node_modules",
       "<rootDir>/lib/",
@@ -146,5 +161,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "@types/react-test-renderer": "^18.0.2"
   }
 }
