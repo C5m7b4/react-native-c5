@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1695233643662" clover="3.2.0">
-  <project timestamp="1695233643662" name="All files">
-    <metrics statements="367" coveredstatements="346" conditionals="430" coveredconditionals="308" methods="99" coveredmethods="90" elements="896" coveredelements="744" complexity="0" loc="367" ncloc="367" packages="8" files="10" classes="10"/>
+<coverage generated="1695241179226" clover="3.2.0">
+  <project timestamp="1695241179226" name="All files">
+    <metrics statements="367" coveredstatements="346" conditionals="430" coveredconditionals="307" methods="99" coveredmethods="90" elements="896" coveredelements="743" complexity="0" loc="367" ncloc="367" packages="8" files="10" classes="10"/>
     <package name="charts">
       <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="index.ts" path="D:\testDev\typescript\videos\Udemy\react-native-c5\src\charts\index.ts">
@@ -9,9 +9,9 @@
       </file>
     </package>
     <package name="charts.BarChart">
-      <metrics statements="36" coveredstatements="33" conditionals="80" coveredconditionals="63" methods="8" coveredmethods="6"/>
+      <metrics statements="36" coveredstatements="33" conditionals="80" coveredconditionals="62" methods="8" coveredmethods="6"/>
       <file name="index.tsx" path="D:\testDev\typescript\videos\Udemy\react-native-c5\src\charts\BarChart\index.tsx">
-        <metrics statements="36" coveredstatements="33" conditionals="80" coveredconditionals="63" methods="8" coveredmethods="6"/>
+        <metrics statements="36" coveredstatements="33" conditionals="80" coveredconditionals="62" methods="8" coveredmethods="6"/>
         <line num="20" count="3" type="stmt"/>
         <line num="21" count="3" type="stmt"/>
         <line num="22" count="3" type="stmt"/>

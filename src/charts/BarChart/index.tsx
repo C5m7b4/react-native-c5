@@ -8,7 +8,7 @@ import Svg, {
   Rect,
   Stop,
   Text as SvgText,
-} from 'react-native-svg'; // Stop, // LinearGradient, // Rect, // Path, // Defs, // G,
+} from 'react-native-svg';
 import BasicChart from '../BasicChart';
 import {
   BarChartProps,
