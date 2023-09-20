@@ -2182,58 +2182,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGPath
-          d="
-              
-              M 90, 250
-              L 85, 245
-              L 85, 45
-              L 105, 45
-              L 110, 50
-              L 110, 250
-            Z"
-          fill={
-            Object {
-              "payload": 4293615103,
-              "type": 0,
-            }
-          }
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-              "strokeWidth",
-            ]
-          }
-          strokeWidth="0"
-        />
-        <RNSVGRect
-          fill={
-            Object {
-              "brushRef": "bargradient",
-              "type": 1,
-            }
-          }
-          height="0"
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          responsible={true}
-          width="20"
-          x="90"
-          y="250"
-        />
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2241,58 +2190,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGPath
-          d="
-              
-              M 156.66666666666669, 250
-              L 151.66666666666669, 245
-              L 151.66666666666669, 135.625
-              L 171.66666666666669, 135.625
-              L 176.66666666666669, 140.625
-              L 176.66666666666669, 250
-            Z"
-          fill={
-            Object {
-              "payload": 4293615103,
-              "type": 0,
-            }
-          }
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-              "strokeWidth",
-            ]
-          }
-          strokeWidth="0"
-        />
-        <RNSVGRect
-          fill={
-            Object {
-              "brushRef": "bargradient",
-              "type": 1,
-            }
-          }
-          height="0"
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          responsible={true}
-          width="20"
-          x="156.66666666666669"
-          y="250"
-        />
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2300,58 +2198,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGPath
-          d="
-              
-              M 223.33333333333334, 250
-              L 218.33333333333334, 245
-              L 218.33333333333334, 104.375
-              L 238.33333333333334, 104.375
-              L 243.33333333333334, 109.375
-              L 243.33333333333334, 250
-            Z"
-          fill={
-            Object {
-              "payload": 4293615103,
-              "type": 0,
-            }
-          }
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-              "strokeWidth",
-            ]
-          }
-          strokeWidth="0"
-        />
-        <RNSVGRect
-          fill={
-            Object {
-              "brushRef": "bargradient",
-              "type": 1,
-            }
-          }
-          height="0"
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          responsible={true}
-          width="20"
-          x="223.33333333333334"
-          y="250"
-        />
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2359,58 +2206,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGPath
-          d="
-              
-              M 290, 250
-              L 285, 245
-              L 285, 73.125
-              L 305, 73.125
-              L 310, 78.125
-              L 310, 250
-            Z"
-          fill={
-            Object {
-              "payload": 4293615103,
-              "type": 0,
-            }
-          }
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-              "strokeWidth",
-            ]
-          }
-          strokeWidth="0"
-        />
-        <RNSVGRect
-          fill={
-            Object {
-              "brushRef": "bargradient",
-              "type": 1,
-            }
-          }
-          height="0"
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          responsible={true}
-          width="20"
-          x="290"
-          y="250"
-        />
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2418,58 +2214,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGPath
-          d="
-              
-              M 356.6666666666667, 250
-              L 351.6666666666667, 245
-              L 351.6666666666667, 166.875
-              L 371.6666666666667, 166.875
-              L 376.6666666666667, 171.875
-              L 376.6666666666667, 250
-            Z"
-          fill={
-            Object {
-              "payload": 4293615103,
-              "type": 0,
-            }
-          }
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-              "strokeWidth",
-            ]
-          }
-          strokeWidth="0"
-        />
-        <RNSVGRect
-          fill={
-            Object {
-              "brushRef": "bargradient",
-              "type": 1,
-            }
-          }
-          height="0"
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          responsible={true}
-          width="20"
-          x="356.6666666666667"
-          y="250"
-        />
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2477,58 +2222,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGPath
-          d="
-              
-              M 423.33333333333337, 250
-              L 418.33333333333337, 245
-              L 418.33333333333337, 123.125
-              L 438.33333333333337, 123.125
-              L 443.33333333333337, 128.125
-              L 443.33333333333337, 250
-            Z"
-          fill={
-            Object {
-              "payload": 4293615103,
-              "type": 0,
-            }
-          }
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-              "strokeWidth",
-            ]
-          }
-          strokeWidth="0"
-        />
-        <RNSVGRect
-          fill={
-            Object {
-              "brushRef": "bargradient",
-              "type": 1,
-            }
-          }
-          height="0"
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          responsible={true}
-          width="20"
-          x="423.33333333333337"
-          y="250"
-        />
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2536,58 +2230,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGPath
-          d="
-              
-              M 490, 250
-              L 485, 245
-              L 485, 141.25
-              L 505, 141.25
-              L 510, 146.25
-              L 510, 250
-            Z"
-          fill={
-            Object {
-              "payload": 4293615103,
-              "type": 0,
-            }
-          }
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-              "strokeWidth",
-            ]
-          }
-          strokeWidth="0"
-        />
-        <RNSVGRect
-          fill={
-            Object {
-              "brushRef": "bargradient",
-              "type": 1,
-            }
-          }
-          height="0"
-          onResponderGrant={[Function]}
-          onResponderMove={[Function]}
-          onResponderRelease={[Function]}
-          onResponderTerminate={[Function]}
-          onResponderTerminationRequest={[Function]}
-          onStartShouldSetResponder={[Function]}
-          opacity={1}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          responsible={true}
-          width="20"
-          x="490"
-          y="250"
-        />
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2595,59 +2238,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGText
-          content={null}
-          dx={Array []}
-          dy={Array []}
-          fill={
-            Object {
-              "payload": 4278190080,
-              "type": 0,
-            }
-          }
-          font={
-            Object {
-              "fontSize": "12",
-              "fontWeight": "400",
-              "textAnchor": "middle",
-            }
-          }
-          opacity={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotate={Array []}
-          x={
-            Array [
-              "100",
-            ]
-          }
-          y={
-            Array [
-              "45",
-            ]
-          }
-        >
-          <RNSVGTSpan
-            content="320"
-            dx={Array []}
-            dy={Array []}
-            fill={
-              Object {
-                "payload": 4278190080,
-                "type": 0,
-              }
-            }
-            font={Object {}}
-            rotate={Array []}
-            x={Array []}
-            y={Array []}
-          />
-        </RNSVGText>
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2655,59 +2246,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGText
-          content={null}
-          dx={Array []}
-          dy={Array []}
-          fill={
-            Object {
-              "payload": 4278190080,
-              "type": 0,
-            }
-          }
-          font={
-            Object {
-              "fontSize": "12",
-              "fontWeight": "400",
-              "textAnchor": "middle",
-            }
-          }
-          opacity={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotate={Array []}
-          x={
-            Array [
-              "166.66666666666669",
-            ]
-          }
-          y={
-            Array [
-              "135.625",
-            ]
-          }
-        >
-          <RNSVGTSpan
-            content="175"
-            dx={Array []}
-            dy={Array []}
-            fill={
-              Object {
-                "payload": 4278190080,
-                "type": 0,
-              }
-            }
-            font={Object {}}
-            rotate={Array []}
-            x={Array []}
-            y={Array []}
-          />
-        </RNSVGText>
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2715,59 +2254,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGText
-          content={null}
-          dx={Array []}
-          dy={Array []}
-          fill={
-            Object {
-              "payload": 4278190080,
-              "type": 0,
-            }
-          }
-          font={
-            Object {
-              "fontSize": "12",
-              "fontWeight": "400",
-              "textAnchor": "middle",
-            }
-          }
-          opacity={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotate={Array []}
-          x={
-            Array [
-              "233.33333333333334",
-            ]
-          }
-          y={
-            Array [
-              "104.375",
-            ]
-          }
-        >
-          <RNSVGTSpan
-            content="225"
-            dx={Array []}
-            dy={Array []}
-            fill={
-              Object {
-                "payload": 4278190080,
-                "type": 0,
-              }
-            }
-            font={Object {}}
-            rotate={Array []}
-            x={Array []}
-            y={Array []}
-          />
-        </RNSVGText>
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2775,59 +2262,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGText
-          content={null}
-          dx={Array []}
-          dy={Array []}
-          fill={
-            Object {
-              "payload": 4278190080,
-              "type": 0,
-            }
-          }
-          font={
-            Object {
-              "fontSize": "12",
-              "fontWeight": "400",
-              "textAnchor": "middle",
-            }
-          }
-          opacity={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotate={Array []}
-          x={
-            Array [
-              "300",
-            ]
-          }
-          y={
-            Array [
-              "73.125",
-            ]
-          }
-        >
-          <RNSVGTSpan
-            content="275"
-            dx={Array []}
-            dy={Array []}
-            fill={
-              Object {
-                "payload": 4278190080,
-                "type": 0,
-              }
-            }
-            font={Object {}}
-            rotate={Array []}
-            x={Array []}
-            y={Array []}
-          />
-        </RNSVGText>
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2835,59 +2270,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGText
-          content={null}
-          dx={Array []}
-          dy={Array []}
-          fill={
-            Object {
-              "payload": 4278190080,
-              "type": 0,
-            }
-          }
-          font={
-            Object {
-              "fontSize": "12",
-              "fontWeight": "400",
-              "textAnchor": "middle",
-            }
-          }
-          opacity={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotate={Array []}
-          x={
-            Array [
-              "366.6666666666667",
-            ]
-          }
-          y={
-            Array [
-              "166.875",
-            ]
-          }
-        >
-          <RNSVGTSpan
-            content="125"
-            dx={Array []}
-            dy={Array []}
-            fill={
-              Object {
-                "payload": 4278190080,
-                "type": 0,
-              }
-            }
-            font={Object {}}
-            rotate={Array []}
-            x={Array []}
-            y={Array []}
-          />
-        </RNSVGText>
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2895,59 +2278,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGText
-          content={null}
-          dx={Array []}
-          dy={Array []}
-          fill={
-            Object {
-              "payload": 4278190080,
-              "type": 0,
-            }
-          }
-          font={
-            Object {
-              "fontSize": "12",
-              "fontWeight": "400",
-              "textAnchor": "middle",
-            }
-          }
-          opacity={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotate={Array []}
-          x={
-            Array [
-              "433.33333333333337",
-            ]
-          }
-          y={
-            Array [
-              "123.125",
-            ]
-          }
-        >
-          <RNSVGTSpan
-            content="195"
-            dx={Array []}
-            dy={Array []}
-            fill={
-              Object {
-                "payload": 4278190080,
-                "type": 0,
-              }
-            }
-            font={Object {}}
-            rotate={Array []}
-            x={Array []}
-            y={Array []}
-          />
-        </RNSVGText>
-      </RNSVGGroup>
+      />
       <RNSVGGroup
         fill={
           Object {
@@ -2955,59 +2286,7 @@ exports[`BarChart should render properly 1`] = `
             "type": 0,
           }
         }
-      >
-        <RNSVGText
-          content={null}
-          dx={Array []}
-          dy={Array []}
-          fill={
-            Object {
-              "payload": 4278190080,
-              "type": 0,
-            }
-          }
-          font={
-            Object {
-              "fontSize": "12",
-              "fontWeight": "400",
-              "textAnchor": "middle",
-            }
-          }
-          opacity={0}
-          propList={
-            Array [
-              "fill",
-            ]
-          }
-          rotate={Array []}
-          x={
-            Array [
-              "500",
-            ]
-          }
-          y={
-            Array [
-              "141.25",
-            ]
-          }
-        >
-          <RNSVGTSpan
-            content="166"
-            dx={Array []}
-            dy={Array []}
-            fill={
-              Object {
-                "payload": 4278190080,
-                "type": 0,
-              }
-            }
-            font={Object {}}
-            rotate={Array []}
-            x={Array []}
-            y={Array []}
-          />
-        </RNSVGText>
-      </RNSVGGroup>
+      />
     </RNSVGGroup>
   </RNSVGSvgView>
 </View>
