@@ -358,3 +358,7 @@ MIT
 ---
 
 Made with [create-react-native-library](https://github.com/callstack/react-native-builder-bob)
+
+### shoutouts
+
+[make jest woth with Animated](https://medium.com/@joncardasis/react-native-how-to-test-components-implementing-animated-with-jest-8cabb5fc2730)
