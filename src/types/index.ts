@@ -1,4 +1,5 @@
 export type TextAnchor = 'start' | 'middle' | 'end';
+export type IGradientUnits = 'userSpaceOnUse' | 'objectBoundingBox';
 import { ILinearGradient, AxisConfig } from '../interfaces';
 
 export type BasicChartProps<T, K> = K & {
@@ -27,7 +28,8 @@ export type BasicChartProps<T, K> = K & {
   x_label_renderer?: (item: T) => React.ReactNode;
   y_axis_config?: AxisConfig;
   y_key: keyof T;
-  y_label_renderer?: (item: string) => React.ReactNode;
+  y_label_renderer?: (item: string | number) => React.ReactNode;
+  predicate?: (item: T[]) => T[];
 };
 
 export type BasicChartState<T> = {
