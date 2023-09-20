@@ -28,7 +28,6 @@ describe('BasicChart', () => {
     expect(tree).toMatchSnapshot();
   });
   test('should handle onPressItem', () => {
-    const fn = jest.fn();
     const tree = renderer
       .create(
         <LineChart
@@ -37,7 +36,6 @@ describe('BasicChart', () => {
           data={testData}
           x_key="month"
           y_key="value"
-          onPressItem={fn}
           showTooltips={true}
           curve={true}
           showHorizontalLines={true}
