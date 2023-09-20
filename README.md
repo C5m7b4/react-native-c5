@@ -289,6 +289,60 @@ const {
     } = this.props;
 ```
 
+## BoxPlot
+
+![boxplot](images/011-box-plot.png)
+
+```js
+export interface BoxPlotPress<T> {
+  record: string;
+  q1: number;
+  q3: number;
+  index: number;
+  x: number;
+  m: number;
+  outliers: number[];
+  maxwo: number;
+  minwo: number;
+  dayData: any;
+  predicateResult: T[] | null;
+}
+
+export interface BoxPlotProps<T> {
+  barWidth?: number;
+  animated?: boolean;
+  barColor?: string;
+  barOpacity?: number;
+  bar_gradient_config?: ILinearGradient;
+  predicate_gradient_config?: ILinearGradient;
+  skipYAxisLabels?: number;
+  barStroke?: string;
+  barStrokeWidth?: number;
+  useBarGradient?: boolean;
+  medianStroke?: string;
+  medianStrokeWidth?: number;
+  upperLineStroke?: string;
+  upperLineStrokeWidth?: number;
+  upperboxStroke?: string;
+  upperboxStrokeWidth?: number;
+  lowerLineSroke?: string;
+  lowerLineStrokeWidth?: number;
+  lowerboxStroke?: string;
+  lowerboxStrokeWidth?: number;
+  onPress?: (record: BoxPlotPress<T>) => void;
+  predicateResult?: (item: T) => T[] | [];
+  outlier_config?: IOutlier;
+}
+
+export interface IOutlier {
+  radius?: number;
+  stroke?: string;
+  strokeWidth?: number;
+  opacity?: number;
+  fill?: string;
+}
+```
+
 ## Contributing
 
 See the [contributing guide](CONTRIBUTING.md) to learn how to contribute to the repository and the development workflow.
