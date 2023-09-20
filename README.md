@@ -1,5 +1,9 @@
 # react-native-c5
 
+![GitHub last commit (branch)](https://img.shields.io/github/last-commit/C5m7b4/react-native-c5/main)
+![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/C5m7b4/react-native-c5/main)
+![GitHub](https://img.shields.io/github/license/C5m7b4/react-native-c5)
+
 a  small library to host charts
 
 ## Installation
