@@ -133,7 +133,8 @@
           "useTabs": false
         }
       ],
-      "no-bitwise": 0
+      "no-bitwise": 0,
+      "eslint-comments/no-unlimited-disable": 0
     }
   },
   "eslintIgnore": [
