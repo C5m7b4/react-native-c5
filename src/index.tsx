@@ -1,23 +1,30 @@
-import { BarChart, BoxPlot, BasicChart, LineChart } from './charts';
+import { BarChart, BoxPlot, BasicChart, LineChart, MultiLine } from './charts';
 import {
   BasicChartProps,
   BasicChartState,
-  TextAnchor,
   IGradientUnits,
+  TextAnchor,
 } from './types';
 import {
   AxisConfig,
   BarChartProps,
+  BoxPlotPress,
   BoxPlotProps,
   IBarChartTooltipConfig,
   ILinearGradient,
   ILineTooltipConfig,
   IOutlier,
   IStop,
+  MultiLineData,
+  MultiLineProps,
   LineChartProps,
-  BoxPlotPress,
 } from './interfaces';
-import { quickSort, newShade } from './utils';
+import {
+  getRandomValueFromArray,
+  newShade,
+  quickSort,
+  separateData,
+} from './utils';
 
 import {
   asc,
@@ -50,6 +57,7 @@ export {
   BoxPlotPress,
   BoxPlotProps,
   desc,
+  getRandomValueFromArray,
   IGradientUnits,
   IBarChartTooltipConfig,
   ILinearGradient,
@@ -65,7 +73,11 @@ export {
   median,
   min,
   minWithoutOutliers,
+  MultiLine,
+  MultiLineData,
+  MultiLineProps,
   newShade,
+  separateData,
   sum,
   Outliers,
   range,

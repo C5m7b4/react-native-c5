@@ -306,6 +306,7 @@ class BoxPlot<T> extends BasicChart<T, BoxPlotProps<T>> {
     return (
       <G key={`rect-g-${index}`}>
         <Rect
+          testID={`box-${index}`}
           x={x - barWidth / 2}
           y={y}
           width={barWidth}
