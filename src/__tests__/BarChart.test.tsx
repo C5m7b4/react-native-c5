@@ -14,6 +14,7 @@ describe('BarChart', () => {
   test('should render properly', () => {
     // @ts-ignore
     global.withAnimatedTimeTravelEnabled(() => {
+      const testFn = jest.fn();
       const tree = renderer
         .create(
           <BarChart
@@ -21,6 +22,7 @@ describe('BarChart', () => {
             data={testData}
             x_key="month"
             y_key="value"
+            onPressItem={testFn}
           />
         )
         .toJSON();

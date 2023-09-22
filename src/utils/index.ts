@@ -1,4 +1,5 @@
 import { quickSort } from './quickSort';
 import { newShade } from './newShade';
+import { separateData, getRandomValueFromArray } from './separateData';
 
-export { quickSort, newShade };
+export { getRandomValueFromArray, newShade, quickSort, separateData };

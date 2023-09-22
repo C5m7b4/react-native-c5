@@ -131,6 +131,7 @@ class BarChart<T> extends BasicChart<T, BarChartProps> {
             />
           ) : null}
           <AnimatedRect
+            testID={`rect-${index}`}
             x={x - barWidth / 2}
             y={y}
             height={animated ? animatedHeight : -barHeight}

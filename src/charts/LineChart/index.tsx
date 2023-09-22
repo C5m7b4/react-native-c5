@@ -72,6 +72,7 @@ class LineChart<T> extends BasicChart<T, LineChartProps> {
       return (
         <G key={`chart-circle_${index}`}>
           <Circle
+            testID={`circle-${index}`}
             cx={x}
             cy={y}
             r={lineCircleRadius}
@@ -92,6 +93,7 @@ class LineChart<T> extends BasicChart<T, LineChartProps> {
                 opacity={0.8}
               />
               <Rect
+                testID={`rect-${index}`}
                 x={x - tooltipWidth / 2}
                 y={y - lineCircleRadius / 2 - tooltipHeight - 10}
                 width={tooltipWidth}

@@ -10,9 +10,9 @@ export interface AxisConfig {
 }
 
 export interface IStop {
-  offset: number;
-  stopColor: string;
-  stopOpacity: number;
+  offset?: number;
+  stopColor?: string;
+  stopOpacity?: number;
 }
 
 export interface ILinearGradient {
@@ -117,4 +117,46 @@ export interface IOutlier {
   strokeWidth?: number;
   opacity?: number;
   fill?: string;
+}
+
+export interface MultiLineData<T> {
+  data: T[];
+  label: string;
+  color: string;
+  useGradient?: boolean;
+  gradient?: ILinearGradient;
+}
+
+export interface MultiLineProps<T> {
+  data: MultiLineData<T>[];
+  x_key: keyof T;
+  y_key: keyof T;
+  onPressItem?: (item: MultiLineData<T>) => void;
+  margin?: number;
+  height?: number;
+  width?: number;
+  backgroundColor?: string;
+  svgBackgroundColor?: string;
+  useGradientBackground?: boolean;
+  backgroundBorderRadius?: number;
+  axisColor?: string;
+  axisStrokeWidth?: number;
+  axisCircleStrokeColor?: string;
+  axisCircleRadius?: number;
+  axisCircleFillColor?: string;
+  axisCircleOpacity?: number;
+  gradient_background_config?: ILinearGradient;
+  x_axis_config?: AxisConfig;
+  y_axis_config?: AxisConfig;
+  showHorizontalLines?: boolean;
+  horizontalLineOpacity?: number;
+  showVerticalLines?: boolean;
+  verticalLineOpacity?: number;
+  curve?: boolean;
+  animated?: boolean;
+  lineStrokeWidth?: number;
+  legend?: boolean;
+  x_label_renderer?: (item: T[keyof T]) => void;
+  y_label_renderer?: (item: string) => void;
+  lineGradient?: boolean;
 }

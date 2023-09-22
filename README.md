@@ -3,6 +3,8 @@
 ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/C5m7b4/react-native-c5/main)
 ![GitHub package.json version (branch)](https://img.shields.io/github/package-json/v/C5m7b4/react-native-c5/main)
 ![GitHub](https://img.shields.io/github/license/C5m7b4/react-native-c5)
+[![codecov](https://codecov.io/gh/C5m7b4/react-native-c5/graph/badge.svg?token=4GSXGJPAVS)](https://codecov.io/gh/C5m7b4/react-native-c5)
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/C5m7b4/react-native-c5/tree/main.svg?style=svg)](https://dl.circleci.com/status-badge/redirect/gh/C5m7b4/react-native-c5/tree/main)
 
 a  small library to host charts
 
@@ -297,6 +299,23 @@ const {
 
 ![boxplot](images/011-box-plot.png)
 
+the boxplot chart also exposes some other useful helper functions
+
+* asc
+* desc
+* sum
+* max
+* min
+* range
+* mean
+* median
+* quartile
+* IQR
+* Outliers
+* maxWithoutOutliers
+* minWithoutOutliers
+* unique
+
 ```js
 export interface BoxPlotPress<T> {
   record: string;
@@ -346,6 +365,25 @@ export interface IOutlier {
   fill?: string;
 }
 ```
+
+## MultiLine
+
+In order to use this chart, you have to separate your data. We have supplied a function that you can use for this:
+
+```js
+const colors = [
+  '#81968f',
+  '#ecb0e1',
+  '#de6c83',
+  '#c1aac0',
+  '#2cf6b3',
+  '#87255b',
+];
+
+const separated = separateData(promarData, 'f01', colors);
+```
+
+here we are creating each array based off the 'f01' key of the data specified. Each of these arrays will become each line.
 
 ## Contributing
 
