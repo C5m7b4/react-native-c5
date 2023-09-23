@@ -198,20 +198,29 @@ class LineChart<T> extends BasicChart<T, LineChartProps> {
     const end_y_split =
       (this.state.containerHeight - this.state.margin - lastY) / 2;
 
-    dPath +=
-      ` Q ${lastX + end_x_split}, ${lastY}, ${lastX + end_x_split * 2}, ${
-        lastY + end_y_split
-      }` +
-      ` Q ${lastX + end_x_split * 3}, ${lastY + end_y_split * 2}, ${
-        this.state.containerWidth - this.state.margin
-      }, ${yOrigin}` +
-      `L ${this.state.margin}, ${yOrigin}` +
-      `Q ${this.state.margin + x_split}, ${yOrigin}, ${
-        this.state.margin + x_split * 2
-      }, ${yOrigin + y_split}` +
-      `Q ${this.state.margin + x_split * 3}, ${
-        yOrigin + y_split * 2
-      }, ${firstX}, ${firstY}Z`;
+    if (curve) {
+      dPath +=
+        ` Q ${lastX + end_x_split}, ${lastY}, ${lastX + end_x_split * 2}, ${
+          lastY + end_y_split
+        }` +
+        ` Q ${lastX + end_x_split * 3}, ${lastY + end_y_split * 2}, ${
+          this.state.containerWidth - this.state.margin
+        }, ${yOrigin}` +
+        `L ${this.state.margin}, ${yOrigin}` +
+        `Q ${this.state.margin + x_split}, ${yOrigin}, ${
+          this.state.margin + x_split * 2
+        }, ${yOrigin + y_split}` +
+        `Q ${this.state.margin + x_split * 3}, ${
+          yOrigin + y_split * 2
+        }, ${firstX}, ${firstY}Z`;
+    } else {
+      dPath += `L ${this.state.containerWidth - this.state.margin}, ${
+        this.state.containerHeight - this.state.margin
+      } L ${this.state.margin}, ${
+        this.state.containerHeight - this.state.margin
+      } Z`;
+    }
+
     return <Path d={dPath} fill={'url(#lineshadow)'} strokeWidth={0} />;
   }
 
@@ -238,7 +247,7 @@ class LineChart<T> extends BasicChart<T, LineChartProps> {
       lineCircleStroke = '#000',
       lineCircleStrokeWidth = 1,
       lineCircleFill = 'blue',
-      showTooltips = true,
+      showTooltips = false,
       lineStrokeWidth = 2,
       lineStroke = 'purple',
       curve = true,
@@ -264,9 +273,9 @@ class LineChart<T> extends BasicChart<T, LineChartProps> {
       x_axis_config = {
         fontSize: 12,
         textAnchor: 'middle',
-        fontColor: '#fff',
+        fontColor: '#000',
         fontWeight: '400',
-        rotation: -45,
+        rotation: 0,
       },
       y_axis_config = {
         fontSize: 12,
@@ -350,6 +359,14 @@ class LineChart<T> extends BasicChart<T, LineChartProps> {
               axisStrokeWidth,
               verticalLineOpacity
             )}
+
+          {this.state.data &&
+            this.state.data.length > 0 &&
+            this.render_line(lineStrokeWidth, lineStroke, curve)}
+          {this.state.data &&
+            this.state.data.length > 0 &&
+            useLineShadow &&
+            this.render_shadow(curve)}
           {this.state.data &&
             this.state.data.length > 0 &&
             this.render_line_circles(
@@ -361,13 +378,6 @@ class LineChart<T> extends BasicChart<T, LineChartProps> {
               showTooltips,
               tooltip_config
             )}
-          {this.state.data &&
-            this.state.data.length > 0 &&
-            this.render_line(lineStrokeWidth, lineStroke, curve)}
-          {this.state.data &&
-            this.state.data.length > 0 &&
-            useLineShadow &&
-            this.render_shadow(curve)}
         </Svg>
       </View>
     );

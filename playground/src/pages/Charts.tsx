@@ -25,6 +25,7 @@ const Charts = () => {
         y_key="value"
         height={300}
         margin={40}
+        curve={false}
         y_label_renderer={yRenderer}
       />
     </View>

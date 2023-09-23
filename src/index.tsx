@@ -1,4 +1,11 @@
-import { BarChart, BoxPlot, BasicChart, LineChart, MultiLine } from './charts';
+import {
+  BarChart,
+  BoxPlot,
+  BasicChart,
+  LineChart,
+  MultiLine,
+  PieChart,
+} from './charts';
 import {
   BasicChartProps,
   BasicChartState,
@@ -18,6 +25,7 @@ import {
   MultiLineData,
   MultiLineProps,
   LineChartProps,
+  PieProps,
 } from './interfaces';
 import {
   getRandomValueFromArray,
@@ -77,6 +85,8 @@ export {
   MultiLineData,
   MultiLineProps,
   newShade,
+  PieChart,
+  PieProps,
   separateData,
   sum,
   Outliers,

@@ -25,7 +25,7 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
     y_key,
     curve = false,
     animated = false,
-    legend = true,
+    legend = false,
     onPressItem,
     margin = 50,
     height: containerHeight = 300,
@@ -353,8 +353,12 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
     const { gap_between_ticks: x_gap } = calculateWidth();
     const { gap_between_ticks: y_gap, yMax, y_value_gap } = calculateHeight();
     let dPath = '';
-    let prevXValue = 0;
-    let prevYValue = 0;
+    let prevX = 0;
+    let prevY = 0;
+    let firstX = 0;
+    let firstY = 0;
+    let lastX = 0;
+    let lastY = 0;
     arr.map((item, index) => {
       let x = margin * 2 + x_gap * index;
       let y =
@@ -362,34 +366,40 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
       if ((item as unknown as number) < 0) {
         y = containerHeight - margin;
       }
+      if (index === arr.length - 1) {
+        lastX = x;
+        lastY = y;
+      }
       if (curve) {
         if (index === 0) {
           dPath += `M${x},${y} `;
-          prevXValue = x;
-          prevYValue = y;
+          prevX = x;
+          prevY = y;
+          firstX = x;
+          firstY = y;
         } else {
-          const x_splitter = (x - prevXValue) / 4;
-          const y_splitter = (y - prevYValue) / 2;
+          const x_splitter = (x - prevX) / 4;
+          const y_splitter = (y - prevY) / 2;
           dPath +=
-            ` Q ${prevXValue + x_splitter},${prevYValue},${
-              prevXValue + x_splitter * 2
-            },${prevYValue + y_splitter}` +
-            ` Q ${prevXValue + x_splitter * 3},${
-              prevYValue + y_splitter * 2
-            },${x},${y}`;
-          prevXValue = x;
-          prevYValue = y;
+            ` Q ${prevX + x_splitter},${prevY},${prevX + x_splitter * 2},${
+              prevY + y_splitter
+            }` +
+            ` Q ${prevX + x_splitter * 3},${prevY + y_splitter * 2},${x},${y}`;
+          prevX = x;
+          prevY = y;
         }
       } else {
         if (index === 0) {
           dPath += `M${x},${y}`;
+          firstX = x;
+          firstY = y;
         } else {
           dPath += ` L${x},${y}`;
         }
       }
     });
 
-    return dPath;
+    return { dPath, firstX, firstY, lastX, lastY };
   };
 
   const render_lines = () => {
@@ -401,7 +411,7 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
     }
     return tmpArray.map((item, index) => {
       const tmp = item.data.map((r) => r[y_key]);
-      const dPath = getDPath(tmp as MultiLineData<T>[]);
+      const { dPath } = getDPath(tmp as MultiLineData<T>[]);
       if (animated) {
         return (
           <Path
@@ -433,7 +443,7 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
     });
   };
 
-  const render_gradients = () => {
+  const render_shadows = () => {
     let tmpArray = Array.from(data);
     if (exclusions.length > 0) {
       exclusions.map((ex) => {
@@ -443,18 +453,53 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
     return tmpArray.map((item, index) => {
       if (item.gradient) {
         const tmp = item.data.map((r) => r[y_key]);
-        let dPath = getDPath(tmp as MultiLineData<T>[]);
-        dPath += `L ${containerWidth - margin * 2}, ${
-          containerHeight - margin
-        } L ${margin}, ${containerHeight - margin} Z`;
-        return (
-          <Path
-            key={`gradient_${index}`}
-            d={dPath}
-            strokeWidth={0}
-            fill={`url(#fillShadowGradient_${index})`}
-          />
+        let { dPath, firstX, firstY, lastX, lastY } = getDPath(
+          tmp as MultiLineData<T>[]
         );
+
+        if (curve) {
+          const yOrigin = containerHeight - margin;
+          const x_split = (firstX - margin) / 4;
+          const y_split = (firstY - yOrigin) / 2;
+
+          const end_x_split = (containerWidth - margin - lastX) / 4;
+          const end_y_split = (containerHeight - margin - lastY) / 2;
+
+          dPath +=
+            ` Q ${lastX + end_x_split}, ${lastY}, ${lastX + end_x_split * 2}, ${
+              lastY + end_y_split
+            }` +
+            ` Q ${lastX + end_x_split * 3}, ${lastY + end_y_split * 2}, ${
+              containerWidth - margin
+            }, ${yOrigin}` +
+            `L ${margin}, ${yOrigin}` +
+            `Q ${margin + x_split}, ${yOrigin}, ${margin + x_split * 2}, ${
+              yOrigin + y_split
+            }` +
+            `Q ${margin + x_split * 3}, ${
+              yOrigin + y_split * 2
+            }, ${firstX}, ${firstY}Z`;
+          return (
+            <Path
+              key={`gradient_${index}`}
+              d={dPath}
+              strokeWidth={0}
+              fill={`url(#fillShadowGradient_${index})`}
+            />
+          );
+        } else {
+          dPath += `L ${containerWidth - margin}, ${
+            containerHeight - margin
+          } L ${margin}, ${containerHeight - margin} Z`;
+          return (
+            <Path
+              key={`gradient_${index}`}
+              d={dPath}
+              strokeWidth={0}
+              fill={`url(#fillShadowGradient_${index})`}
+            />
+          );
+        }
       } else {
         return null;
       }
@@ -463,11 +508,11 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
 
   const render_legend = () => {
     const legendPaddingY = 25;
-    const legendPaddingX = 50;
+    const legendPaddingX = 25;
     let lastY = legendPaddingY;
     const fontSize = 12;
     const radius = 10;
-    const stringLength = 4;
+    const stringLength = 3;
 
     return data.map((item, index) => {
       let x = index * 75 + legendPaddingX;
@@ -484,28 +529,18 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
             cy={lastY}
             r={radius}
             strokeWidth={1}
-            fill={exclusions.includes(item.label) ? '#ccc' : item.color}
-            onPress={() => handleExclusionPress(item.label)}
-          />
-          <Rect
-            testID={`leg-rect-${index}`}
-            x={x - radius / 2 - 10}
-            y={y - radius / 2 - legendPaddingY / 2}
-            width={fontSize + legendPaddingX + stringLength}
-            height={fontSize + legendPaddingY}
-            opacity={0.5}
-            rx={radius / 2}
-            stroke={'#000'}
-            strokeWidth={2}
+            fill={item.color}
+            opacity={exclusions.includes(item.label) ? 0.3 : 1}
             onPress={() => handleExclusionPress(item.label)}
           />
           <SvgText
             testID={`leg-text-${index}`}
-            id={`legend_item_${index}`}
             x={x + 15}
             y={y + 7}
-            fill={exclusions.includes(item.label) ? '#ccc' : '#000'}
-            fontSize={12}
+            fontWeight={'800'}
+            fontSize={fontSize}
+            fill={item.color}
+            opacity={exclusions.includes(item.label) ? 0.3 : 1}
             onPress={() => handleExclusionPress(item.label)}
           >
             {item.label.length > stringLength
@@ -538,16 +573,9 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
     backgroundColor: svgBackgroundColor,
   };
 
-  const legendStyle = {
-    backgroundColor: 'transparent',
-    fill: 'transparent',
-    strokeWidth: 3,
-    stroke: '#000',
-  };
-
   return (
     <View style={mainContainer}>
-      <Svg style={svgContainer}>
+      <Svg height="100%" width="100%" style={svgContainer}>
         <Defs>
           {data &&
             data.length > 0 &&
@@ -600,6 +628,7 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
             />
           </LinearGradient>
         </Defs>
+
         {useGradientBackground && render_background()}
         {render_x_axis()}
         {render_y_axis()}
@@ -607,7 +636,7 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
         {data && data.length > 0 && render_x_axis_labels()}
         {data && data.length > 0 && render_y_axis_ticks()}
         {data && data.length > 0 && render_y_axis_labels()}
-        {data && data.length > 0 && lineGradient && render_gradients()}
+        {data && data.length > 0 && lineGradient && render_shadows()}
         {data &&
           data.length > 0 &&
           showHorizontalLines &&
@@ -617,26 +646,8 @@ const MultiLine = <T,>(props: MultiLineProps<T>): JSX.Element => {
           showVerticalLines &&
           render_vertical_lines()}
         {data && data.length > 0 && render_lines()}
+        {data && data.length > 0 && legend && render_legend()}
       </Svg>
-      {legend ? (
-        <Svg
-          height={Math.ceil(data.length / 4) * 50}
-          width={containerWidth}
-          style={legendStyle}
-        >
-          <G>
-            <Rect
-              x={0}
-              y={0}
-              height={Math.ceil(data.length / 4) * 50}
-              width={containerWidth}
-              fill={'transparent'}
-              rx={10}
-            />
-            {data && data.length > 0 && render_legend()}
-          </G>
-        </Svg>
-      ) : null}
     </View>
   );
 };

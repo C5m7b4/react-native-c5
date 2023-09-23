@@ -18,12 +18,13 @@ interface iData {
 }
 
 const colors = [
-  '#81968f',
-  '#ecb0e1',
-  '#de6c83',
-  '#c1aac0',
-  '#2cf6b3',
+  '#284B63',
+  '#F25C54',
+  '#439479',
+  '#3C6E71',
+  '#511C29',
   '#87255b',
+  '#DACC3E',
 ];
 
 const MultiLines = () => {
@@ -37,10 +38,12 @@ const MultiLines = () => {
     <View style={styles.container}>
       <Text style={styles.text}>MultiLine Charts</Text>
       <MultiLine
-        curve={false}
-        animated={true}
+        curve={true}
+        animated={false}
+        legend={true}
         data={data}
         lineGradient={true}
+        lineStrokeWidth={3}
         x_key="datename"
         y_key="margin"
       />
