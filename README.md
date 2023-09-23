@@ -368,6 +368,8 @@ export interface IOutlier {
 
 ## MultiLine
 
+![multiline](images/012-multiline.png)
+
 In order to use this chart, you have to separate your data. We have supplied a function that you can use for this:
 
 ```js

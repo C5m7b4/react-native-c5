@@ -1,7 +1,7 @@
 export const testData = [
-  {Month: 'Jan', value: 320},
+  {month: 'Jan', value: 320},
   {month: 'Feb', value: 175},
-  {month: 'Mar', value: 225},
+  {month: 'Mar', value: 145},
   {month: 'Apr', value: 275},
   {month: 'May', value: 125},
   {month: 'Jun', value: 195},
@@ -190,4 +190,10 @@ export const promarData: IPromar[] = [
     margin: '6.88',
     f01: 'Frozen',
   },
+];
+
+export const pieData = [
+  {value: 50, label: 'Groc'},
+  {value: 10, label: 'Dairy'},
+  {value: 10, label: 'Meat'},
 ];

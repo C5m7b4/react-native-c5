@@ -8,6 +8,7 @@ import Charts from './src/pages/Charts';
 import BarCharts from './src/pages/BarCharts';
 import BoxPlots from './src/pages/BoxPlots';
 import MultiLines from './src/pages/MultiLines';
+import Pies from './src/pages/Pies';
 
 const Page1 = () => {
   const [mulResult, setMulResult] = useState(0);
@@ -47,6 +48,7 @@ const App = () => {
         <Drawer.Screen name="BarCharts" component={BarCharts} />
         <Drawer.Screen name="BoxPlots" component={BoxPlots} />
         <Drawer.Screen name="MultiLines" component={MultiLines} />
+        <Drawer.Screen name="Pies" component={Pies} />
       </Drawer.Navigator>
     </NavigationContainer>
   );

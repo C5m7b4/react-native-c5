@@ -160,3 +160,21 @@ export interface MultiLineProps<T> {
   y_label_renderer?: (item: string) => void;
   lineGradient?: boolean;
 }
+
+export interface PieProps<T> {
+  data: T[];
+  label: keyof T;
+  value: keyof T;
+  pieBackgroundColor?: string;
+  chartBackgroundColor?: string;
+  height?: number;
+  width?: number;
+  fontSize?: number;
+  useDonut?: boolean;
+  donutRadius?: number;
+  donutColor?: string;
+  tickColor?: string;
+  tickTextColor?: string;
+  colors?: string[];
+  textColor?: string;
+}

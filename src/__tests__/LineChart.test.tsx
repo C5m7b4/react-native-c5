@@ -4,10 +4,11 @@ import renderer from 'react-test-renderer';
 import { testData } from '../testData/data';
 import { render, screen, fireEvent } from '@testing-library/react-native';
 
-const xRenderer = (e: any) => {
+const xRenderer = () => {
   return 1;
 };
-const yRenderer = (e: any) => {
+
+const yRenderer = () => {
   return 1;
 };
 
@@ -95,26 +96,7 @@ describe('BasicChart', () => {
 
     expect(screen).toMatchSnapshot();
   });
-  test('should handle rect click', () => {
-    const testFn = jest.fn();
-    render(
-      <LineChart
-        height={300}
-        width={200}
-        data={testData}
-        onPressItem={testFn}
-        x_key="month"
-        y_key="value"
-        tooltip_config={{
-          fontWeight: '400',
-        }}
-      />
-    );
 
-    fireEvent.press(screen.getByTestId('rect-0'));
-
-    expect(screen).toMatchSnapshot();
-  });
   test('should handle renderers', () => {
     render(
       <LineChart

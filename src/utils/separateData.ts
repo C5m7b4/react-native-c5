@@ -18,9 +18,13 @@ export const unique = <T>(arr: T[], field: keyof T) => {
 export const separateData = <T>(arr: T[], field: keyof T, targetArray: any) => {
   const newArray: MultiLineData<T>[] = [];
   const uniqueValues = unique(arr, 'f01' as keyof T);
-  uniqueValues.forEach((r: string) => {
+  uniqueValues.forEach((r: string, i: number) => {
     const tmpArr = arr.filter((v) => v[field] === r);
-    const color = getRandomValueFromArray(targetArray);
+    let color =
+      targetArray.length > i - 1 ? targetArray[i - 1] : targetArray[0];
+    if (!color) {
+      color = targetArray[0];
+    }
     newArray.push({
       label: r,
       color: color as string,
